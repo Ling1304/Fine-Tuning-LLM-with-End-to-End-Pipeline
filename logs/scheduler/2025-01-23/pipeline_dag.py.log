@@ -1,0 +1,530 @@
+[2025-01-23T04:29:10.590+0000] {processor.py:186} INFO - Started process (PID=72) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:29:10.592+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T04:29:10.608+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:10.608+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:29:11.745+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:11.728+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T04:29:35.440+0000] {logging_mixin.py:190} WARNING - wandb: Currently logged in as: 0132114 (0132114-uow-malaysia). Use `wandb login --relogin` to force relogin
+[2025-01-23T04:29:35.464+0000] {processor.py:925} INFO - DAG(s) 'fine_tune_pipeline' retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:29:35.594+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.593+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG:fine_tune_pipeline
+[2025-01-23T04:29:35.608+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.607+0000] {override.py:1911} INFO - Created Permission View: can read on DAG:fine_tune_pipeline
+[2025-01-23T04:29:35.620+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.619+0000] {override.py:1911} INFO - Created Permission View: can edit on DAG:fine_tune_pipeline
+[2025-01-23T04:29:35.633+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.633+0000] {override.py:1911} INFO - Created Permission View: can create on DAG Run:fine_tune_pipeline
+[2025-01-23T04:29:35.645+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.645+0000] {override.py:1911} INFO - Created Permission View: can delete on DAG Run:fine_tune_pipeline
+[2025-01-23T04:29:35.655+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.654+0000] {override.py:1911} INFO - Created Permission View: can read on DAG Run:fine_tune_pipeline
+[2025-01-23T04:29:35.665+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.664+0000] {override.py:1911} INFO - Created Permission View: menu access on DAG Run:fine_tune_pipeline
+[2025-01-23T04:29:35.666+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.665+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-23T04:29:35.683+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.682+0000] {dag.py:3262} INFO - Creating ORM DAG for fine_tune_pipeline
+[2025-01-23T04:29:35.684+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:29:35.684+0000] {dag.py:4180} INFO - Setting next_dagrun for fine_tune_pipeline to None, run_after=None
+[2025-01-23T04:29:35.703+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/pipeline_dag.py took 25.204 seconds
+[2025-01-23T04:30:06.301+0000] {processor.py:186} INFO - Started process (PID=170) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:30:06.302+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T04:30:06.305+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:30:06.305+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:30:06.645+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:30:06.644+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T04:30:40.851+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:30:40.785+0000] {timeout.py:68} ERROR - Process timed out, PID: 170
+[2025-01-23T04:30:41.206+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:30:41.030+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/pipeline_dag.py", line 4, in <module>
+    from main import data_ingestion, data_preprocessing, train, evaluate, deploy_to_HF
+  File "/opt/airflow/dags/main.py", line 6, in <module>
+    from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, PeftModel
+  File "/home/airflow/.local/lib/python3.12/site-packages/peft/__init__.py", line 22, in <module>
+    from .auto import (
+  File "/home/airflow/.local/lib/python3.12/site-packages/peft/auto.py", line 21, in <module>
+    from transformers import (
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/__init__.py", line 26, in <module>
+    from . import dependency_versions_check
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+    from .utils.versions import require_version, require_version_core
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/__init__.py", line 27, in <module>
+    from .chat_template_utils import DocstringParsingException, TypeHintParsingException, get_json_schema
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/chat_template_utils.py", line 40, in <module>
+    from torch import Tensor
+  File "/home/airflow/.local/lib/python3.12/site-packages/torch/__init__.py", line 367, in <module>
+    from torch._C import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 463, in _lock_unlock_module
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/pipeline_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#reducing-dag-complexity, PID: 170
+[2025-01-23T04:30:41.234+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:31:30.969+0000] {processor.py:186} INFO - Started process (PID=234) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:31:30.970+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T04:31:30.973+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:31:30.973+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:31:31.272+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:31:31.272+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T04:32:01.544+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:32:01.485+0000] {timeout.py:68} ERROR - Process timed out, PID: 234
+[2025-01-23T04:32:04.151+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:32:01.546+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/pipeline_dag.py", line 4, in <module>
+    from main import data_ingestion, data_preprocessing, train, evaluate, deploy_to_HF
+  File "/opt/airflow/dags/main.py", line 6, in <module>
+    from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, PeftModel
+  File "/home/airflow/.local/lib/python3.12/site-packages/peft/__init__.py", line 22, in <module>
+    from .auto import (
+  File "/home/airflow/.local/lib/python3.12/site-packages/peft/auto.py", line 21, in <module>
+    from transformers import (
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/__init__.py", line 26, in <module>
+    from . import dependency_versions_check
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+    from .utils.versions import require_version, require_version_core
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/__init__.py", line 27, in <module>
+    from .chat_template_utils import DocstringParsingException, TypeHintParsingException, get_json_schema
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/chat_template_utils.py", line 40, in <module>
+    from torch import Tensor
+  File "/home/airflow/.local/lib/python3.12/site-packages/torch/__init__.py", line 2016, in <module>
+    from torch import _VF as _VF, functional as functional  # usort: skip
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/torch/functional.py", line 7, in <module>
+    import torch.nn.functional as F
+  File "/home/airflow/.local/lib/python3.12/site-packages/torch/nn/__init__.py", line 9, in <module>
+    from torch.nn import (
+  File "/home/airflow/.local/lib/python3.12/site-packages/torch/nn/attention/__init__.py", line 8, in <module>
+    from torch.backends.cuda import (
+  File "/home/airflow/.local/lib/python3.12/site-packages/torch/backends/__init__.py", line 60, in <module>
+    from torch.backends import (
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 995, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1091, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1190, in get_data
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/pipeline_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#reducing-dag-complexity, PID: 234
+[2025-01-23T04:32:04.680+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:32:15.350+0000] {processor.py:211} ERROR - Got an exception! Propagating...
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 145, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 928, in process_file
+    DagFileProcessor.update_import_errors(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 648, in update_import_errors
+    existing_import_error_files = [x.filename for x in session.query(ParseImportError.filename).all()]
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2773, in all
+    return self._iter().all()
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2916, in _iter
+    result = self.session.execute(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 145, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-01-23T04:47:39.523+0000] {processor.py:186} INFO - Started process (PID=326) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:47:39.524+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T04:47:39.526+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:47:39.525+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:47:39.873+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:47:39.873+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T04:47:53.866+0000] {logging_mixin.py:190} WARNING - wandb: Currently logged in as: 0132114 (0132114-uow-malaysia). Use `wandb login --relogin` to force relogin
+[2025-01-23T04:47:53.890+0000] {processor.py:925} INFO - DAG(s) 'fine_tune_pipeline' retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:47:54.169+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:47:54.168+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-23T04:47:54.181+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:47:54.181+0000] {dag.py:4180} INFO - Setting next_dagrun for fine_tune_pipeline to None, run_after=None
+[2025-01-23T04:47:54.206+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/pipeline_dag.py took 14.690 seconds
+[2025-01-23T04:48:24.510+0000] {processor.py:186} INFO - Started process (PID=406) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:48:24.511+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T04:48:24.512+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:48:24.512+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T04:48:24.770+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:48:24.770+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T04:59:19.817+0000] {logging_mixin.py:190} INFO - [2025-01-23T04:58:49.996+0000] {timeout.py:68} ERROR - Process timed out, PID: 406
+[2025-01-23T05:00:59.305+0000] {logging_mixin.py:190} INFO - [2025-01-23T05:00:58.870+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/pipeline_dag.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/pipeline_dag.py", line 4, in <module>
+    from main import data_ingestion, data_preprocessing, train, evaluate, deploy_to_HF
+  File "/opt/airflow/dags/main.py", line 6, in <module>
+    from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, PeftModel
+  File "/home/airflow/.local/lib/python3.12/site-packages/peft/__init__.py", line 22, in <module>
+    from .auto import (
+  File "/home/airflow/.local/lib/python3.12/site-packages/peft/auto.py", line 21, in <module>
+    from transformers import (
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/__init__.py", line 26, in <module>
+    from . import dependency_versions_check
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/dependency_versions_check.py", line 16, in <module>
+    from .utils.versions import require_version, require_version_core
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/__init__.py", line 27, in <module>
+    from .chat_template_utils import DocstringParsingException, TypeHintParsingException, get_json_schema
+  File "/home/airflow/.local/lib/python3.12/site-packages/transformers/utils/chat_template_utils.py", line 40, in <module>
+    from torch import Tensor
+  File "/home/airflow/.local/lib/python3.12/site-packages/torch/__init__.py", line 367, in <module>
+    from torch._C import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/timeout.py", line 69, in handle_timeout
+    raise AirflowTaskTimeout(self.error_message)
+airflow.exceptions.AirflowTaskTimeout: DagBag import timeout for /opt/airflow/dags/pipeline_dag.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.10.4/best-practices.html#reducing-dag-complexity, PID: 406
+[2025-01-23T05:00:59.465+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T05:01:09.799+0000] {processor.py:211} ERROR - Got an exception! Propagating...
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 145, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.OperationalError: could not translate host name "postgres" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 207, in _run_file_processor
+    _handle_dag_file_processing()
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 188, in _handle_dag_file_processing
+    result: tuple[int, int, int] = dag_file_processor.process_file(
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 928, in process_file
+    DagFileProcessor.update_import_errors(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/api_internal/internal_api_call.py", line 166, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/processor.py", line 648, in update_import_errors
+    existing_import_error_files = [x.filename for x in session.query(ParseImportError.filename).all()]
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2773, in all
+    return self._iter().all()
+           ^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/query.py", line 2916, in _iter
+    result = self.session.execute(
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1716, in execute
+    conn = self._connection_for_bind(bind)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 1555, in _connection_for_bind
+    return self._transaction._connection_for_bind(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 750, in _connection_for_bind
+    conn = bind.connect()
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/future/engine.py", line 412, in connect
+    return super(Engine, self).connect()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3325, in connect
+    return self._connection_cls(self, close_with_result=close_with_result)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 96, in __init__
+    else engine.raw_connection()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3404, in raw_connection
+    return self._wrap_pool_connect(self.pool.connect, _connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3374, in _wrap_pool_connect
+    Connection._handle_dbapi_exception_noconnection(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2208, in _handle_dbapi_exception_noconnection
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 3371, in _wrap_pool_connect
+    return fn()
+           ^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 327, in connect
+    return _ConnectionFairy._checkout(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 894, in _checkout
+    fairy = _ConnectionRecord.checkout(pool)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 493, in checkout
+    rec = pool._do_get()
+          ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 145, in _do_get
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/impl.py", line 143, in _do_get
+    return self._create_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 273, in _create_connection
+    return _ConnectionRecord(self)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 388, in __init__
+    self.__connect()
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 690, in __connect
+    with util.safe_reraise():
+         ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/langhelpers.py", line 70, in __exit__
+    compat.raise_(
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/pool/base.py", line 686, in __connect
+    self.dbapi_connection = connection = pool._invoke_creator(self)
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/create.py", line 574, in connect
+    return dialect.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 598, in connect
+    return self.dbapi.connect(*cargs, **cparams)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) could not translate host name "postgres" to address: Temporary failure in name resolution
+
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+[2025-01-23T05:01:16.783+0000] {processor.py:186} INFO - Started process (PID=430) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T05:01:16.786+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T05:01:16.935+0000] {logging_mixin.py:190} INFO - [2025-01-23T05:01:16.934+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T05:01:17.462+0000] {logging_mixin.py:190} INFO - [2025-01-23T05:01:17.462+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T05:02:14.080+0000] {logging_mixin.py:190} INFO - [2025-01-23T05:02:06.263+0000] {timeout.py:68} ERROR - Process timed out, PID: 430
+[2025-01-23T07:46:57.406+0000] {processor.py:186} INFO - Started process (PID=73) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:46:57.411+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T07:46:57.430+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:46:57.429+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:46:58.186+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:46:58.185+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T07:47:24.432+0000] {logging_mixin.py:190} WARNING - wandb: Currently logged in as: 0132114 (0132114-uow-malaysia). Use `wandb login --relogin` to force relogin
+[2025-01-23T07:47:24.468+0000] {processor.py:925} INFO - DAG(s) 'fine_tune_pipeline' retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:47:24.518+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:47:24.517+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-23T07:47:24.538+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:47:24.538+0000] {dag.py:4180} INFO - Setting next_dagrun for fine_tune_pipeline to None, run_after=None
+[2025-01-23T07:47:24.594+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/pipeline_dag.py took 27.220 seconds
+[2025-01-23T07:47:55.071+0000] {processor.py:186} INFO - Started process (PID=196) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:47:55.072+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T07:47:55.074+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:47:55.074+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:47:55.400+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:47:55.399+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T07:48:07.993+0000] {logging_mixin.py:190} WARNING - wandb: Currently logged in as: 0132114 (0132114-uow-malaysia). Use `wandb login --relogin` to force relogin
+[2025-01-23T07:48:07.998+0000] {processor.py:925} INFO - DAG(s) 'fine_tune_pipeline' retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:48:08.026+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:48:08.025+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-23T07:48:08.044+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:48:08.044+0000] {dag.py:4180} INFO - Setting next_dagrun for fine_tune_pipeline to None, run_after=None
+[2025-01-23T07:48:08.085+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/pipeline_dag.py took 13.021 seconds
+[2025-01-23T07:48:38.490+0000] {processor.py:186} INFO - Started process (PID=290) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:48:38.491+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T07:48:38.493+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:48:38.493+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:48:38.749+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:48:38.749+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T07:48:50.326+0000] {logging_mixin.py:190} WARNING - wandb: Currently logged in as: 0132114 (0132114-uow-malaysia). Use `wandb login --relogin` to force relogin
+[2025-01-23T07:48:50.331+0000] {processor.py:925} INFO - DAG(s) 'fine_tune_pipeline' retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:48:50.349+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:48:50.348+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-23T07:48:50.361+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:48:50.361+0000] {dag.py:4180} INFO - Setting next_dagrun for fine_tune_pipeline to None, run_after=None
+[2025-01-23T07:48:50.379+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/pipeline_dag.py took 11.897 seconds
+[2025-01-23T07:49:20.708+0000] {processor.py:186} INFO - Started process (PID=385) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:49:20.709+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T07:49:20.711+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:49:20.711+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:49:20.967+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:49:20.967+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T07:49:32.361+0000] {logging_mixin.py:190} WARNING - wandb: Currently logged in as: 0132114 (0132114-uow-malaysia). Use `wandb login --relogin` to force relogin
+[2025-01-23T07:49:32.367+0000] {processor.py:925} INFO - DAG(s) 'fine_tune_pipeline' retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:49:32.387+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:49:32.386+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-23T07:49:32.402+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:49:32.402+0000] {dag.py:4180} INFO - Setting next_dagrun for fine_tune_pipeline to None, run_after=None
+[2025-01-23T07:49:32.425+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/pipeline_dag.py took 11.723 seconds
+[2025-01-23T07:50:02.715+0000] {processor.py:186} INFO - Started process (PID=497) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:50:02.716+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T07:50:02.719+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:50:02.718+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:50:02.988+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:50:02.988+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T07:50:16.065+0000] {logging_mixin.py:190} WARNING - wandb: Currently logged in as: 0132114 (0132114-uow-malaysia). Use `wandb login --relogin` to force relogin
+[2025-01-23T07:50:16.077+0000] {processor.py:925} INFO - DAG(s) 'fine_tune_pipeline' retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:50:16.108+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:50:16.107+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-23T07:50:16.123+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:50:16.123+0000] {dag.py:4180} INFO - Setting next_dagrun for fine_tune_pipeline to None, run_after=None
+[2025-01-23T07:50:16.150+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/pipeline_dag.py took 13.444 seconds
+[2025-01-23T07:50:46.679+0000] {processor.py:186} INFO - Started process (PID=586) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:50:46.681+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T07:50:46.684+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:50:46.684+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:50:46.987+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:50:46.986+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T07:51:02.175+0000] {logging_mixin.py:190} WARNING - wandb: Currently logged in as: 0132114 (0132114-uow-malaysia). Use `wandb login --relogin` to force relogin
+[2025-01-23T07:51:02.182+0000] {processor.py:925} INFO - DAG(s) 'fine_tune_pipeline' retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:51:02.207+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:51:02.207+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-23T07:51:02.221+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:51:02.221+0000] {dag.py:4180} INFO - Setting next_dagrun for fine_tune_pipeline to None, run_after=None
+[2025-01-23T07:51:02.240+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/pipeline_dag.py took 15.568 seconds
+[2025-01-23T07:51:32.383+0000] {processor.py:186} INFO - Started process (PID=707) to work on /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:51:32.384+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/pipeline_dag.py for tasks to queue
+[2025-01-23T07:51:32.387+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:51:32.386+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:51:32.709+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:51:32.709+0000] {config.py:54} INFO - PyTorch version 2.5.1 available.
+[2025-01-23T07:51:46.141+0000] {logging_mixin.py:190} WARNING - wandb: Currently logged in as: 0132114 (0132114-uow-malaysia). Use `wandb login --relogin` to force relogin
+[2025-01-23T07:51:46.147+0000] {processor.py:925} INFO - DAG(s) 'fine_tune_pipeline' retrieved from /opt/airflow/dags/pipeline_dag.py
+[2025-01-23T07:51:46.233+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:51:46.232+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-01-23T07:51:46.273+0000] {logging_mixin.py:190} INFO - [2025-01-23T07:51:46.273+0000] {dag.py:4180} INFO - Setting next_dagrun for fine_tune_pipeline to None, run_after=None
+[2025-01-23T07:51:46.306+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/pipeline_dag.py took 13.931 seconds

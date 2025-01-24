@@ -1,0 +1,12 @@
+bitsandbytes
+transformers
+peft
+accelerate
+datasets
+scipy
+einops
+evaluate
+trl
+rouge-score
+wandb
+google-cloud-bigquery

@@ -1,0 +1,80 @@
+[2025-01-22T15:08:42.163+0000] {processor.py:186} INFO - Started process (PID=60) to work on /opt/airflow/dags/test.py
+[2025-01-22T15:08:42.164+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-22T15:08:42.169+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:08:42.168+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-22T15:08:42.228+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:08:42.219+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/test.py", line 4, in <module>
+    from main import data_ingestion, data_preprocessing, train, deploy_to_HF
+  File "/opt/airflow/dags/main.py", line 1, in <module>
+    from datasets import DatasetDict, load_dataset
+ModuleNotFoundError: No module named 'datasets'
+[2025-01-22T15:08:42.231+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/test.py
+[2025-01-22T15:08:42.253+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.096 seconds
+[2025-01-22T15:09:13.127+0000] {processor.py:186} INFO - Started process (PID=125) to work on /opt/airflow/dags/test.py
+[2025-01-22T15:09:13.128+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-22T15:09:13.131+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:09:13.130+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-22T15:09:13.163+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:09:13.154+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/test.py", line 4, in <module>
+    from main import data_ingestion, data_preprocessing, train, deploy_to_HF
+  File "/opt/airflow/dags/main.py", line 1, in <module>
+    from datasets import DatasetDict, load_dataset
+ModuleNotFoundError: No module named 'datasets'
+[2025-01-22T15:09:13.166+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/test.py
+[2025-01-22T15:09:13.195+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.075 seconds
+[2025-01-22T15:09:44.135+0000] {processor.py:186} INFO - Started process (PID=190) to work on /opt/airflow/dags/test.py
+[2025-01-22T15:09:44.136+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-22T15:09:44.138+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:09:44.138+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-22T15:09:44.164+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:09:44.157+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/test.py", line 4, in <module>
+    from main import data_ingestion, data_preprocessing, train, deploy_to_HF
+  File "/opt/airflow/dags/main.py", line 1, in <module>
+    from datasets import DatasetDict, load_dataset
+ModuleNotFoundError: No module named 'datasets'
+[2025-01-22T15:09:44.166+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/test.py
+[2025-01-22T15:09:44.185+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.056 seconds
+[2025-01-22T15:10:14.796+0000] {processor.py:186} INFO - Started process (PID=255) to work on /opt/airflow/dags/test.py
+[2025-01-22T15:10:14.797+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-22T15:10:14.800+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:10:14.800+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-22T15:10:14.827+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:10:14.819+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/test.py", line 4, in <module>
+    from main import data_ingestion, data_preprocessing, train, deploy_to_HF
+  File "/opt/airflow/dags/main.py", line 1, in <module>
+    from datasets import DatasetDict, load_dataset
+ModuleNotFoundError: No module named 'datasets'
+[2025-01-22T15:10:14.829+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/test.py
+[2025-01-22T15:10:14.847+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.057 seconds
+[2025-01-22T15:10:44.959+0000] {processor.py:186} INFO - Started process (PID=320) to work on /opt/airflow/dags/test.py
+[2025-01-22T15:10:44.961+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/test.py for tasks to queue
+[2025-01-22T15:10:44.966+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:10:44.965+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/test.py
+[2025-01-22T15:10:45.009+0000] {logging_mixin.py:190} INFO - [2025-01-22T15:10:44.999+0000] {dagbag.py:387} ERROR - Failed to import: /opt/airflow/dags/test.py
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/dagbag.py", line 383, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/opt/airflow/dags/test.py", line 4, in <module>
+    from main import data_ingestion, data_preprocessing, train, deploy_to_HF
+  File "/opt/airflow/dags/main.py", line 1, in <module>
+    from datasets import DatasetDict, load_dataset
+ModuleNotFoundError: No module named 'datasets'
+[2025-01-22T15:10:45.012+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/test.py
+[2025-01-22T15:10:45.035+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/test.py took 0.088 seconds
